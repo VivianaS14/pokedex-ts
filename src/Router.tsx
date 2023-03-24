@@ -4,7 +4,7 @@ import { Items, Pokemon, Pokemons } from "./pages";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App box-border">
       <Routes>
         <Route path="/" element={<Pokemons />} />
         <Route path="/pokemons" element={<Pokemons />} />

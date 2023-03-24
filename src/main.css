@@ -1,12 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -21,8 +19,4 @@
     rgba(124, 166, 252, 1) 0%,
     rgba(119, 235, 129, 1) 100%
   );
-}
-
-body {
-    font-family: 'Rubik', sans-serif;
 }
