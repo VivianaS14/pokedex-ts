@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Footer } from "../components";
+import { Header, Footer, PokemonItem } from "../components";
 
 const Pokemons = () => {
   const [query, setQuery] = useState<string>("");
@@ -7,8 +7,10 @@ const Pokemons = () => {
   return (
     <>
       <Header query={query} setQuery={setQuery} />
-      <main>
-        <h1 className="font-body">POKEMONS</h1>
+      <main className="p-3 h-full overflow-auto">
+        <nav>
+          <PokemonItem />
+        </nav>
       </main>
       <Footer />
     </>

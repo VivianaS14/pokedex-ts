@@ -4,7 +4,7 @@ import { Items, Pokemon, Pokemons } from "./pages";
 
 const App = () => {
   return (
-    <div className="App box-border">
+    <div className="box-border grid grid-cols-1 h-screen content-between">
       <Routes>
         <Route path="/" element={<Pokemons />} />
         <Route path="/pokemons" element={<Pokemons />} />
