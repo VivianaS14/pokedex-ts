@@ -1,8 +1,10 @@
 import { pokesApi } from "./pokesApi";
 import { Pokemons } from "../interfaces/Pokemons";
-import { getUniquePokemons } from "../utils/getUniquePokemons";
-import { formatPokemonName } from "../utils/formatPokemonName";
-import { getFilterPokemons } from "../utils/getFilterPokemons";
+import {
+  getUniquePokemons,
+  formatPokemonName,
+  getFilterPokemons,
+} from "../utils";
 import { sleep } from "../helpers/sleep";
 // https://unpkg.com/pokemons@1.1.0/pokemons.json
 
@@ -23,7 +25,7 @@ export interface PokemonsResponse {
 export const getPokemons = async ({
   query,
 }: Props): Promise<PokemonsResponse> => {
-  //await sleep(1);
+  await sleep(1);
   const { data } = await pokesApi.get<Pokemons>(`/pokemons.json`);
   const pokemonsResult = data.results.map((pokemon) => ({
     name: pokemon.name,
