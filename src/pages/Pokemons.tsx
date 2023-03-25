@@ -4,14 +4,14 @@ import { usePokemons } from "../hooks";
 
 const Pokemons = () => {
   const [query, setQuery] = useState<string>("");
-  const pokemonsQuery = usePokemons();
+  const pokemonsQuery = usePokemons({ query });
 
   return (
     <>
       <Header query={query} setQuery={setQuery} />
       <main className="p-3 h-full overflow-auto">
         <nav className="mb-3">
-          {pokemonsQuery.isFetching ? (
+          {pokemonsQuery.isLoading ? (
             <LoadingScreen />
           ) : (
             pokemonsQuery.data?.results

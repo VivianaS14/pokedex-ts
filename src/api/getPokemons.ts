@@ -2,8 +2,13 @@ import { pokesApi } from "./pokesApi";
 import { Pokemons } from "../interfaces/Pokemons";
 import { getUniquePokemons } from "../utils/getUniquePokemons";
 import { formatPokemonName } from "../utils/formatPokemonName";
+import { getFilterPokemons } from "../utils/getFilterPokemons";
 import { sleep } from "../helpers/sleep";
 // https://unpkg.com/pokemons@1.1.0/pokemons.json
+
+interface Props {
+  query: string;
+}
 
 export type Pokemon = {
   name: string;
@@ -15,8 +20,10 @@ export interface PokemonsResponse {
   results: Pokemon[];
 }
 
-export const getPokemons = async (): Promise<PokemonsResponse> => {
-  await sleep(1);
+export const getPokemons = async ({
+  query,
+}: Props): Promise<PokemonsResponse> => {
+  //await sleep(1);
   const { data } = await pokesApi.get<Pokemons>(`/pokemons.json`);
   const pokemonsResult = data.results.map((pokemon) => ({
     name: pokemon.name,
@@ -25,5 +32,6 @@ export const getPokemons = async (): Promise<PokemonsResponse> => {
       pokemon.name.toLowerCase()
     )}.gif`,
   }));
-  return { results: getUniquePokemons({ results: pokemonsResult }) };
+  const AllPokemons = getFilterPokemons({ results: pokemonsResult }, query);
+  return { results: getUniquePokemons({ results: AllPokemons }) };
 };
