@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Footer, LoadingScreen } from "../components";
 import { usePokemon } from "../hooks";
-import { BulbasaurGif, PokeballIcon } from "../assets";
+import { PokeballIcon } from "../assets";
 
 const Pokemon = () => {
   const params = useParams();

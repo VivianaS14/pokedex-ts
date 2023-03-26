@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { Pokemon } from "../api/getPokemons";
-import { BulbasaurGif } from "../assets";
 
 interface Props {
   data: Pokemon;
