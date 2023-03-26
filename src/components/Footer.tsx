@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="w-full p-3 flex justify-around  bg-gradient-to-r from-indigo-200 to-amber-100">
       <Link
         to="/pokemons"
-        className="flex flex-col items-center text-center text-gray-800 my-3"
+        className="w-1/3 flex flex-col items-center text-center text-gray-800 my-3"
       >
         <img src={PikachuIcon} alt="Logo Pikachu" width="40" className="my-1" />
         Pokemons
       </Link>
       <Link
         to="/items"
-        className="flex flex-col items-center text-center text-gray-800 my-3"
+        className="w-1/3 flex flex-col items-center text-center text-gray-800 my-3"
       >
         <img
           src={PokeballIcon}
@@ -26,7 +26,7 @@ const Footer = () => {
       </Link>
       <Link
         to="/pokemons"
-        className="flex flex-col items-center text-center text-gray-800 my-3"
+        className="w-1/3 flex flex-col items-center text-center text-gray-800 my-3"
       >
         <img src={PointerIcon} alt="Logo Pikachu" width="40" className="my-1" />
         Map

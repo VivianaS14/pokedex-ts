@@ -16,15 +16,15 @@ const Pokemons = () => {
     <>
       <Header query={query} setQuery={setQuery} />
       <main className="p-3 h-full overflow-auto">
-        <nav className="mb-3">
-          {pokemonsQuery.isLoading ? (
-            <LoadingScreen />
-          ) : (
-            pokemonsQuery.data?.results
-              .slice(0, last)
-              .map((pokemon) => <PokemonItem key={pokemon.id} data={pokemon} />)
-          )}
-        </nav>
+        {pokemonsQuery.isLoading ? (
+          <LoadingScreen />
+        ) : (
+          <nav className="mb-3 md:grid grid-cols-2 lg:grid-cols-4">
+            {pokemonsQuery.data?.results.slice(0, last).map((pokemon) => (
+              <PokemonItem key={pokemon.id} data={pokemon} />
+            ))}
+          </nav>
+        )}
         <button
           type="button"
           onClick={handleLoadMore}
