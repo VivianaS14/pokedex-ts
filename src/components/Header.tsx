@@ -12,7 +12,7 @@ const Header: FC<Props> = ({ query, setQuery }) => {
         type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search a Pokemon"
+        placeholder="Search"
         className="px-4 py-2 rounded-md m-2 w-4/5 outline-none font-body bg-slate-500/25 text-slate-900"
       />
     </header>
