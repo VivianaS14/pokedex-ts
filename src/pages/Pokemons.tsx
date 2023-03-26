@@ -5,12 +5,10 @@ import { usePokemons } from "../hooks";
 
 const Pokemons = () => {
   const [query, setQuery] = useState<string>("");
-  const [first, setFirst] = useState<number>(0);
   const [last, setLast] = useState<number>(20);
   const pokemonsQuery = usePokemons({ query });
 
   const handleLoadMore = () => {
-    setFirst(first + 10);
     setLast(last + 10);
   };
 
@@ -23,7 +21,7 @@ const Pokemons = () => {
             <LoadingScreen />
           ) : (
             pokemonsQuery.data?.results
-              .slice(first, last)
+              .slice(0, last)
               .map((pokemon) => <PokemonItem key={pokemon.id} data={pokemon} />)
           )}
         </nav>
