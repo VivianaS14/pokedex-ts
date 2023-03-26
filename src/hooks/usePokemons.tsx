@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getPokemons } from "../api/getPokemons";
+import { getPokemons } from "../api";
 
 interface Props {
   query: string;
