@@ -1,5 +1,5 @@
-import { pokesApi } from "./pokesApi";
-import { Pokemons } from "../interfaces/Pokemons";
+import axios from "axios";
+import { Pokemons, PokemonsResponse } from "../interfaces";
 import {
   getUniquePokemons,
   formatPokemonName,
@@ -8,18 +8,12 @@ import {
 import { sleep } from "../helpers/sleep";
 // https://unpkg.com/pokemons@1.1.0/pokemons.json
 
+const pokesApi = axios.create({
+  baseURL: "https://unpkg.com/pokemons@1.1.0",
+});
+
 interface Props {
   query: string;
-}
-
-export type Pokemon = {
-  name: string;
-  id: string;
-  imgSrc: string;
-};
-
-export interface PokemonsResponse {
-  results: Pokemon[];
 }
 
 export const getPokemons = async ({

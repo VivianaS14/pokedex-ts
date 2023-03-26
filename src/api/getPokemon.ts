@@ -1,7 +1,11 @@
-import { pokeApi } from "./pokeApi";
-import { PokemonDetail, Pokemon } from "../interfaces/Pokemon";
+import axios from "axios";
+import { PokemonDetail, Pokemon } from "../interfaces";
 import { formatPokemonName } from "../utils";
 // https://pokeapi.co/api/v2/pokemon/bulbasaur
+
+const pokeApi = axios.create({
+  baseURL: "https://pokeapi.co/api/v2/pokemon",
+});
 
 export const getPokemon = async (name: string): Promise<PokemonDetail> => {
   const { data } = await pokeApi.get<Pokemon>(`/${formatPokemonName(name)}`);
