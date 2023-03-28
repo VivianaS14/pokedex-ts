@@ -25,14 +25,22 @@ const Pokemons = () => {
             ))}
           </nav>
         )}
-        <button
-          type="button"
-          onClick={handleLoadMore}
-          className="w-full flex justify-center py-4 bg-gradient-to-r from-red-500 to-slate-300 bg-clip-text text-transparent text-md font-bold cursor-pointer"
-        >
-          <img src={PokeballIcon} alt="More Button" className="w-6 h-6 mr-2" />
-          More Pokemons
-        </button>
+        {!pokemonsQuery.isLoading ? (
+          <button
+            type="button"
+            onClick={handleLoadMore}
+            className="w-full flex justify-center py-4 bg-gradient-to-r from-red-500 to-slate-300 bg-clip-text text-transparent text-md font-bold cursor-pointer"
+          >
+            <img
+              src={PokeballIcon}
+              alt="More Button"
+              className="w-6 h-6 mr-2"
+            />
+            More Pokemons
+          </button>
+        ) : (
+          <span></span>
+        )}
       </main>
       <Footer />
     </>

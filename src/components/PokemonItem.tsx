@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { PokemonDetail } from "../interfaces";
+import { PokemonInfo } from "../interfaces";
 
 interface Props {
-  data: PokemonDetail;
+  data: PokemonInfo;
 }
 
 const PokemonItem: FC<Props> = ({ data }) => {
