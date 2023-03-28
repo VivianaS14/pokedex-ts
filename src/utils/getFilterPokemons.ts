@@ -1,4 +1,4 @@
-import { PokemonsResponse } from "../api/getPokemons";
+import { PokemonsResponse } from "../interfaces";
 
 export const getFilterPokemons = (data: PokemonsResponse, query: string) => {
   return data?.results.filter((pokemon) =>
