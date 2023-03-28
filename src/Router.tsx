@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Items, Pokemon, Pokemons } from "./pages";
+import { Items, Item, Pokemon, Pokemons } from "./pages";
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
         <Route path="/pokemons" element={<Pokemons />} />
         <Route path="/pokemons/:name" element={<Pokemon />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/items/:name" element={<Item />} />
       </Routes>
     </div>
   );
