@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Items, Item, Pokemon, Pokemons } from "./pages";
+import { Items, Item, Pokemon, Pokemons, Locations, Location } from "./pages";
 
 const App = () => {
   return (
@@ -11,6 +11,8 @@ const App = () => {
         <Route path="/pokemons/:name" element={<Pokemon />} />
         <Route path="/items" element={<Items />} />
         <Route path="/items/:name" element={<Item />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations/:name" element={<Location />} />
       </Routes>
     </div>
   );

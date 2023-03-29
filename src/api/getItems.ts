@@ -1,7 +1,5 @@
 import axios from "axios";
-import { FC } from "react";
-import { Items } from "../interfaces";
-import { ItemsResponse } from "../interfaces/Items";
+import { Items, ItemsResponse } from "../interfaces";
 import { getFilterItems } from "../utils";
 
 interface Props {

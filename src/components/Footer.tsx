@@ -25,7 +25,7 @@ const Footer = () => {
         Items
       </Link>
       <Link
-        to="/pokemons"
+        to="/locations"
         className="w-1/3 flex flex-col items-center text-center text-gray-800 my-3"
       >
         <img src={PointerIcon} alt="Logo Pikachu" width="40" className="my-1" />
