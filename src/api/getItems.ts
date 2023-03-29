@@ -1,4 +1,4 @@
-import axios from "axios";
+import { API_URL } from "./API_URL";
 import { Items, ItemsResponse } from "../interfaces";
 import { getFilterItems } from "../utils";
 
@@ -7,15 +7,11 @@ interface Props {
   page: number;
 }
 
-const itemApi = axios.create({
-  baseURL: "https://pokeapi.co/api/v2",
-});
-
 export const getItems = async ({
   query,
   page,
 }: Props): Promise<ItemsResponse> => {
-  const { data } = await itemApi.get<Items>(
+  const { data } = await API_URL.get<Items>(
     `/item?offset=${(page - 1) * 20}&limit=20`
   );
   const itemsResult = data.results.map((item, i) => ({

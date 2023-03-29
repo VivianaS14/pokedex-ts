@@ -16,8 +16,9 @@ const Locations = () => {
           <LoadingScreen />
         ) : (
           <nav className="mb-3 md:grid grid-cols-2 lg:grid-cols-4">
-            {locationsQuery.data?.results.map((loca) => (
+            {locationsQuery.data?.results.map((loca, i) => (
               <Link
+                key={i}
                 to={`/locations/${loca.name}`}
                 className="flex items-center border-b-2 border-slate-50 p-3 first:mr-4 last:m-0"
               >
